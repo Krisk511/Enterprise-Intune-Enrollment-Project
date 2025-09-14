@@ -2,25 +2,39 @@
 A complete solution to migrate 180+ unmanaged devices (Windows &amp; macOS) into Microsoft Intune using automation, compatibility checks, and leadership-focused communications.
 
 ## Problem
-The client needed to enroll over 2,000 user devices across 11 subsidiaries into Microsoft Intune. While most devices were successfully onboarded, more than 180 remained unaccounted for and could not be enrolled remotely. The affected users were primarily remote, non-technical, and often unaware of IT compliance requirements. Manual enrollment was slow, error-prone, and unsustainable, further complicated by inconsistent leadership buy-in. 
+The client needed to migrate over 2,000 user devices across 11 subsidiaries into Microsoft Intune. While most were successfully onboarded, 180+ devices were unaccounted for and could not be enrolled remotely.
+
+### Challenges
+- A remote, non-technical user base, often unaware of IT compliance requirements.
+- Manual enrollment processes that were error-prone, time-consuming, and inconsistent.
+- Limited leadership buy-in across subsidiaries, slowing adoption.
+- Seasonal workload variations that made timing and prioritization critical.
 
 ## Solution
-- Automated device compatibility scans (PowerShell + Bash).
-- Enrollment scripts for both Windows & Mac.
-- Built Power BI + JIRA dashboards for real-time enrollment tracking.
-- Developed a communication playbook for leadership buy-in and user engagement.
-- Reduced rollout time by 3 months and cut IT workload by 90%.
-
-## Implementation
-- Scripts (/scripts) with inline documentation.
-- Sample dashboards (/dashboards).
-- Playbooks & comms templates (/docs).
+To address these issues, a multi-pronged approach was designed:
+1. Device Identification & Pathways
+   - Developed scripts (Windows PowerShell + macOS Bash) to scan compatibility, OS version, and enrollment readiness.
+   - Created clear enrollment pathways for each device type: upgrade, Autopilot, admin-assisted, or replacement.
+2. User Engagement & Surveys
+   - Deployed targeted surveys to collect device details from end users where technical data was missing.
+   - Mapped survey responses against script results to close visibility gaps.
+3. Communication & Scheduling
+   - Built a SharePoint hub site as the central self-service portal with:
+   - Enrollment guides
+   - FAQ and troubleshooting
+   - Integrated Microsoft Bookings so users could schedule IT enrollment sessions without back-and-forth emails.
+   - Published a communications playbook for subsidiary leadership to drive awareness and accountability.
+4. Reporting & Dashboards
+   - Created Power BI and JIRA dashboards with real-time visibility into enrollment progress, broken down by subsidiary and device category.
+   - Automated reporting flows using Power Automate + Microsoft Graph API, cutting manual tracking efforts.
 
 ## Results
-- 200+ devices enrolled securely.
-- 90% reduction in support tickets related to enrollment.
-- Cross-department adoption of automation for future IT projects.
-
+- 180+ previously unknown devices identified and processed through structured pathways.
+- 90% reduction in enrollment-related support tickets, freeing IT staff for higher-priority work.
+- Cut rollout time by 3 months, thanks to automation and self-service.
+- Leadership adoption improved significantly due to clear reporting and scheduled sessions, ensuring sustained compliance.200+ devices enrolled securely.
+  
 ## Lessons Learned
-- Leadership buy-in was just as critical as technical execution.
-- Training materials must be mobile-first for younger workforce adoption.
+- Leadership alignment was just as critical as technical execution.
+- Mobile-first, simplified training content drove adoption in a younger, non-technical workforce.
+- Embedding self-service tools (SharePoint, Bookings) reduced friction and scaled IT’s impacLeadership buy-in was just as critical as technical execution.
