@@ -28,6 +28,82 @@ To address these issues, a multi-pronged approach was designed:
    - Created Power BI and JIRA dashboards with real-time visibility into enrollment progress, broken down by subsidiary and device category.
    - Automated reporting flows using Power Automate + Microsoft Graph API, cutting manual tracking efforts.
 
+```mermaid
+---
+config:
+  layout: dagre
+---
+flowchart TD
+ subgraph P1["Phase 1: Discovery"]
+        A1["Inventory export - AAD_Entra, HRIS, ConnectWise"]
+        A2["Unknown device list - 180+"]
+        A3["SharePoint Hub: guides, FAQ"]
+        A4["Compatibility scripts - Win PS, macOS Bash"]
+        A5["User Survey - Forms to fill gaps"]
+  end
+ subgraph P2["Phase 2: Plan & Pathways"]
+        B1["Normalize data: Power Automate"]
+        B2["Map users ↔ devices"]
+        B3{"Pathway decision"}
+        B3a["Autopilot/ABM ready"]
+        B3b["Upgrade OS/firmware"]
+        B3c["Admin-assisted/remote"]
+        B3d["Replace device"]
+  end
+    A1 --> A2
+    A2 --> A3
+    A3 --> A4
+    A4 --> A5
+    B1 --> B2
+    B2 --> B3
+    B3 --> B3a & B3b & B3c & B3d
+
+ %% PHASE 3: ENGAGE
+ subgraph P3["Phase 3: Engage & Schedule"]
+        C1["SharePoint Hub: guides, FAQ"]
+        C2["Targeted comms (leaders + users)"]
+        C3["MS Bookings self-serve slots"]
+        C4["Subsidiary rollout calendar (seasonality)"]
+    C1 --> C2 --> C3 --> C4
+  end
+
+  %% PHASE 4: ENROLL
+  subgraph P4["Phase 4: Enrollment Execution"]
+        D1["OneDrive/Files backup verification"]
+        D2["Run enrollment scripts"]
+        D3["Autopilot/ABM provisioning"]
+        D4["Admin-assisted join (remote/in-person)"]
+        D5["Device replacement logistics"]
+    D1 --> D2
+    D2 --> D3
+    D2 --> D4
+    D2 --> D5
+  end
+
+  %% PHASE 5: VALIDATE
+  subgraph P5["Phase 5: Validate & Report"]
+    E1["Compliance policy assignment"]
+    E2["Conditional Access check"]
+    E3["App provisioning (Win/Mac)"]
+    E4["Health checks & success criteria"]
+    E5["Dashboards: Power BI + JIRA"]
+    E6["Automations (Graph API, Power Automate)"]
+    E1 --> E2 --> E3 --> E4 --> E5 --> E6
+  end
+
+  %% PHASE 6: SUSTAIN
+  subgraph P6["Phase 6: Sustain & Improve"]
+    F1["Leadership cadence & SLA reviews"]
+    F2["Refine playbooks & training"]
+    F3["Backlog: stragglers & exceptions"]
+    F4["Telemetry-driven optimizations"]
+    F1 --> F2 --> F3 --> F4
+  end
+
+P1 --> P2 --> P3 --> P4 --> P5 --> P6
+```
+
+
 ## Results
 - 180+ previously unknown devices identified and processed through structured pathways.
 - 90% reduction in enrollment-related support tickets, freeing IT staff for higher-priority work.
