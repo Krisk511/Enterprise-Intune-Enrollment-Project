@@ -1,5 +1,5 @@
 # Enterprise Intune Enrollment Project
-A complete solution to migrate 180+ unmanaged devices (Windows &amp; macOS) into Microsoft Intune using automation, compatibility checks, and leadership-focused communications.
+A complete solution to migrate 180+ unmanaged devices (Windows &amp; macOS) into [Microsoft Intune](https://www.microsoft.com/en-us/security/business/microsoft-intune) using automation, compatibility checks, and leadership-focused communications.
 
 ## Problem
 The client needed to migrate over 2,000 user devices across 11 subsidiaries into Microsoft Intune. While most were successfully onboarded, 180+ devices were unaccounted for and could not be enrolled remotely.
